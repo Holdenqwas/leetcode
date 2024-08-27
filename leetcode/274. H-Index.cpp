@@ -21,7 +21,7 @@ public:
     }
 };
 
-int main(int argc, char* argv[]) {
+int main274(int argc, char* argv[]) {
     Solution sol = Solution();
     vector<int> a{ 3,0,6,1,5 };
     cout << sol.hIndex274(a) << endl;    

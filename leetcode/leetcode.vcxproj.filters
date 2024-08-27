@@ -144,5 +144,11 @@
     <ClCompile Include="274. H-Index.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="380. Insert Delete GetRandom O1.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="380. Insert Delete GetRandom O1" />
   </ItemGroup>
 </Project>

@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="380. Insert Delete GetRandom O1.cpp" />
     <ClCompile Include="100. Same Tree.cpp" />
     <ClCompile Include="101. Symmetric Tree.cpp" />
     <ClCompile Include="104. Maximum Depth of Binary Tree.cpp" />
@@ -171,6 +172,9 @@
     <ClCompile Include="80.remove_dublicates_sort_array_2.cpp" />
     <ClCompile Include="88.merge_sorted_array.cpp" />
     <ClCompile Include="9. Palindrome Number.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="380. Insert Delete GetRandom O1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
