@@ -1,7 +1,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
-#include <unordered_set>
+#include <unordered_map>
 
 
 // https://leetcode.com/problems/insert-delete-getrandom-o1/description/?envType=study-plan-v2&envId=top-interview-150
@@ -9,41 +9,42 @@
 using namespace std;
 
 class RandomizedSet {
+    vector<int> v;
+    unordered_map<int, int> mp;
 public:
     RandomizedSet() {
-        next = store.end();
+    }
+
+    bool search(int val) {
+        if (mp.find(val) != mp.end())
+            return true;
+        return false;
     }
 
     bool insert(int val) {
-        it = store.find(val);
-        if (it == store.end()) {
-            store.insert(val);
-            next = store.end();
-            return true;
-        }
-        return false;
+        if (search(val))
+            return false;
+
+        v.push_back(val);
+        mp[val] = v.size() - 1;
+        return true;
     }
 
     bool remove(int val) {
-        it = store.find(val);
-        if (it != store.end()) {
-            store.erase(it);
-            next = store.end();
-            return true;
-        }
-        return false;
+        if (!search(val))
+            return false;
+
+        auto it = mp.find(val);
+        v[it->second] = v.back();
+        mp[v[it->second]] = it->second;
+        v.pop_back();
+        mp.erase(val);
+        return true;
     }
 
     int getRandom() {
-        next--;
-        int val = *next;
-        if (next == store.begin()) next = store.end();
-        return val;
+        return v[rand() % v.size()];
     }
-private:
-    unordered_set<int> store;
-    unordered_set<int>::iterator it;
-    unordered_set<int>::iterator next;
 };
 
 int main(int argc, char* argv[]) {
