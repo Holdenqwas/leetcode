@@ -147,6 +147,9 @@
     <ClCompile Include="380. Insert Delete GetRandom O1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="238. Product of Array Except Self.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="380. Insert Delete GetRandom O1" />

@@ -47,7 +47,7 @@ public:
     }
 };
 
-int main(int argc, char* argv[]) {
+int main380(int argc, char* argv[]) {
     RandomizedSet* obj = new RandomizedSet();
     cout << obj->insert(1) << " ";
     cout << obj->remove(2) << " ";
