@@ -147,6 +147,7 @@
     <ClCompile Include="35. Search Insert Position.cpp" />
     <ClCompile Include="530. Minimum Absolute Difference in BST.cpp" />
     <ClCompile Include="55. Jump Game.cpp" />
+    <ClCompile Include="6. Zigzag Conversion.cpp" />
     <ClCompile Include="637. Average of Levels in Binary Tree.cpp" />
     <ClCompile Include="67. Add Binary.cpp" />
     <ClCompile Include="69. Sqrt x.cpp" />
