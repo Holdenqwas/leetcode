@@ -131,6 +131,7 @@
     <ClCompile Include="12. Integer to Roman.cpp" />
     <ClCompile Include="134. Gas Station.cpp" />
     <ClCompile Include="151. Reverse Words in a String.cpp" />
+    <ClCompile Include="167. Two Sum II - Input Array Is Sorted.cpp" />
     <ClCompile Include="238. Product of Array Except Self.cpp" />
     <ClCompile Include="380. Insert Delete GetRandom O1.cpp" />
     <ClCompile Include="100. Same Tree.cpp" />
