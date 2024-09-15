@@ -131,6 +131,7 @@
     <ClCompile Include="11. Container With Most Water.cpp" />
     <ClCompile Include="12. Integer to Roman.cpp" />
     <ClCompile Include="134. Gas Station.cpp" />
+    <ClCompile Include="15. 3Sum.cpp" />
     <ClCompile Include="151. Reverse Words in a String.cpp" />
     <ClCompile Include="167. Two Sum II - Input Array Is Sorted.cpp" />
     <ClCompile Include="238. Product of Array Except Self.cpp" />

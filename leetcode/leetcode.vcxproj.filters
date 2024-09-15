@@ -168,6 +168,9 @@
     <ClCompile Include="11. Container With Most Water.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="15. 3Sum.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="380. Insert Delete GetRandom O1" />
