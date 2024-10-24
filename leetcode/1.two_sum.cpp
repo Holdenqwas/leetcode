@@ -48,7 +48,7 @@ public:
     //}
 };
 
-int main1(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
     Solution sol = Solution();
     vector<int> a{ 3,2,4 };
     int b = 6;

@@ -96,7 +96,7 @@ public:
     }
 };
 
-int main(int argc, char* argv[]) {
+int main15(int argc, char* argv[]) {
     Solution sol = Solution();
     vector<int> a{ -1,0,1,2,-1,-4 };
     print(sol.threeSum15(a));
