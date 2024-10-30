@@ -1,4 +1,4 @@
-$file_name = "54. Spiral Matrix"
+$file_name = "36. Valid Sudoku"
 
 tsc ($file_name + ".ts") --target esnext --outfile index.js
 

@@ -1,68 +1,77 @@
-var Direction;
-(function (Direction) {
-    Direction[Direction["right"] = 1] = "right";
-    Direction[Direction["down"] = 2] = "down";
-    Direction[Direction["left"] = 3] = "left";
-    Direction[Direction["up"] = 4] = "up";
-})(Direction || (Direction = {}));
-function spiralOrder(matrix) {
-    let limit_r = matrix[0].length;
-    let limit_d = matrix.length;
-    let limit_l = 0;
-    let limit_u = 1;
-    let i = 0, j = 0;
-    const size = limit_r * limit_d;
-    const output = [];
-    let direction = Direction.right;
-    while (output.length != size) {
-        output.push(matrix[i][j]);
-        switch (direction) {
-            case Direction.right:
-                if ((j + 1) < limit_r)
-                    j++;
-                else {
-                    direction = Direction.down;
-                    i++;
-                    limit_r--;
+function hasRepitition(arr) {
+    const set = new Set(arr);
+    return set.size != arr.length;
+}
+function validRow(board) {
+    let arr = [];
+    for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+            if (board[i][j] !== ".")
+                arr.push(board[i][j]);
+        }
+        if (hasRepitition(arr))
+            return false;
+        arr = [];
+    }
+    console.log("validRow");
+    return true;
+}
+function validColumn(board) {
+    let arr = [];
+    for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+            if (board[j][i] !== ".")
+                arr.push(board[j][i]);
+        }
+        if (hasRepitition(arr))
+            return false;
+        arr = [];
+    }
+    console.log("validColumn");
+    return true;
+}
+function validBoxes(board) {
+    let arr = [];
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            for (let x = i * 3; x < i * 3 + 3; x++) {
+                for (let y = j * 3; y < j * 3 + 3; y++) {
+                    if (board[x][y] !== ".")
+                        arr.push(board[x][y]);
                 }
-                break;
-            case Direction.down:
-                if ((i + 1) < limit_d)
-                    i++;
-                else {
-                    direction = Direction.left;
-                    j--;
-                    limit_d--;
-                }
-                break;
-            case Direction.left:
-                if ((j - 1) >= limit_l)
-                    j--;
-                else {
-                    direction = Direction.up;
-                    i--;
-                    limit_l++;
-                }
-                break;
-            case Direction.up:
-                if ((i - 1) >= limit_u)
-                    i--;
-                else {
-                    direction = Direction.right;
-                    j++;
-                    limit_u++;
-                }
-                break;
+            }
+            if (hasRepitition(arr))
+                return false;
+            arr = [];
         }
     }
-    return output;
+    console.log("validBoxes");
+    return true;
+}
+function isValidSudoku(board) {
+    if (!validRow(board) || !validColumn(board) || !validBoxes(board))
+        return false;
+    return true;
 }
 ;
-let matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-console.log(spiralOrder(matrix));
-console.log("[1,2,3,6,9,8,7,4,5] - Correct output");
-console.log();
-matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]];
-console.log(spiralOrder(matrix));
-console.log("[1,2,3,4,8,12,11,10,9,5,6,7] - Correct output");
-console.log();
+let board = [["5", "3", ".", ".", "7", ".", ".", ".", "."],
+    ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+    [".", "9", "8", ".", ".", ".", ".", "6", "."],
+    ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+    ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+    ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+    [".", "6", ".", ".", ".", ".", "2", "8", "."],
+    [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+    [".", ".", ".", ".", "8", ".", ".", "7", "9"]];
+console.log(isValidSudoku(board));
+board =
+    [["8", "3", ".", ".", "7", ".", ".", ".", "."],
+        ["6", ".", ".", "1", "9", "5", ".", ".", "."],
+        [".", "9", "8", ".", ".", ".", ".", "6", "."],
+        ["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+        ["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+        ["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+        [".", "6", ".", ".", ".", ".", "2", "8", "."],
+        [".", ".", ".", "4", "1", "9", ".", ".", "5"],
+        [".", ".", ".", ".", "8", ".", ".", "7", "9"]];
+console.log(isValidSudoku(board));
