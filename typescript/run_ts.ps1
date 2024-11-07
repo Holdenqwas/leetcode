@@ -1,4 +1,4 @@
-$file_name = "48. Rotate Image"
+$file_name = "73. Set Matrix Zeroes"
 
 tsc ($file_name + ".ts") --target esnext --outfile index.js
 
