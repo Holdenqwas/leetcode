@@ -1,4 +1,4 @@
-$file_name = "73. Set Matrix Zeroes"
+$file_name = "2. Add Two Numbers"
 
 tsc ($file_name + ".ts") --target esnext --outfile index.js
 
